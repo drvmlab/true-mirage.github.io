@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Mirage Mid Journey</title>
+    <link rel="stylesheet" href="style.css" media="all" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital@1&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+      <style>
+          body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(5, 5, 5);
+            font-family: 'Raleway', sans-serif;
+           }
+
+
+          section.section1 img {
+               max-width: 100%;
+               height: auto;
+                           }
+                  img {
+                  width: 50%;
+            }
+         .header {
+            position: fixed;
+            background-color: rgb(90, 48, 48);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+          }
+         .header h2 {
+            margin: 0;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+            color: #333;
+         }
+         .section1 h1 {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translate(0,-50%);
+            width: 20%;
+            background-color: rgba(0, 0, 0, 0);
+            text-align: center;
+            font-family: 'Thasadith', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(228, 118, 118);
+           }
+
+         .section1 {
+          background-color: transparent; /* Set the background color to transparent */
+          }
+         .button-container,
+        .button-glowing {
+            background-color: transparent; /* Set the background color to transparent */
+          }
+
+         .main {
+            margin-top: 50px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+         }
+         .main img {
+            width: 300px;
+            margin: 20px;
+            border: 2px solid #333;
+         }
+
+         #image-container {
+          
+            overflow-y: scroll;
+          
+            -ms-overflow-style: none;
+            }
+
+            #image-container::-webkit-scrollbar {
+            display: none;}
+            
+         .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            color: rgb(192, 170, 170);
+            padding-top: 10px;
+         }
+
+         .truemiragemusic {
+        transition: filter 6s ease-out;
+        }
+        
+        .truemiragemusic:hover {
+            filter: blur(8px);
+            opacity: 6;
+        }
+        .back-button:hover{
+         filter: blur(8px);
+            opacity: 6;
+
+        }
+          .back-button {
+            transition: filter 7s ease-out;
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            color: rgb(255, 255, 255);
+            padding: 10px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Thasadith', sans-serif;
+            cursor: pointer;
+            z-index: 1;
+            
+            }
+
+ 
+
+         .back-button a {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100%;
+               text-decoration: none;
+               color: rgb(161, 161, 161);
+               
+               }
+
+              
+          .footer {
+               display: flex;
+               justify-content: center;
+                  align-items: center;
+                  height: 50px;
+                  background-color: #000000;
+                  margin-top: auto;
+                  
+               }
+
+          .glowing-btn {
+                  position: relative;
+                  color: var(--glow-color)!important;
+                  cursor: pointer;
+                  padding: 0.320em 1em;
+                  border-radius: 0.7em;
+                  background: none;
+                  perspective: 8em;
+                
+                  font-size: 0.9em;
+                  font-weight: 130;
+                  letter-spacing: 0.9em;
+
+            -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+               0px 0px 0.5em 0px var(--glow-color);
+            -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+               0px 0px 0.5em 0px var(--glow-color);
+            box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+               0px 0px 0.5em 0px var(--glow-color);
+            animation: border-flicker 4s linear infinite;
+            }
+
+            .glowing-txt {
+            float: left;
+            margin-right: -0.8em;
+            -webkit-text-shadow: 1 0 0.125em rgba(179, 122, 122, 0.664),
+               0 0 0.45em var(--glow-color);
+            -moz-text-shadow: 0 0 0.125em rgb(185, 10, 10),
+               0 0 0.45em var(--glow-color);
+            text-shadow: 0 0 0.125em rgba(165, 182, 14, 0.849), 0 0 0.45em var(--glow-color);
+            animation: text-flicker 7s linear infinite;
+            }
+
+            .faulty-letter {
+            opacity: 0.2;
+            animation: faulty-flicker 1s linear infinite;
+
+            }
+
+
+            
+            .glowing-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 3;
+            opacity: 0.6;
+            filter: blur(0.1em);
+            transform: translateY(40%) rotateX(20deg) scale(1, 0.1);
+         
+            pointer-events: none;
+            }
+
+            .glowing-btn::after {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               opacity: 0;
+               z-index: -1;
+               /* background-color: var(--glow-color); */ /* Removed */
+               /* box-shadow: 0 0 2em 0.2em var(--glow-color); */ /* Removed */
+               transition: opacity 10ms linear;
+            }
+           
+
+          
+
+
+button{
+  
+  padding: 10px 20px;
+  background-color: rgb(5, 5, 5);
+  color: #694b4b;
+  border: rgb(27, 17, 17);
+  border-radius: 3px;
+  letter-spacing: 3px;
+  overflow: hidden;
+  transition: 2s;
+  cursor: pointer;
+  
+
+  
+}
+
+
+
+button:hover{
+    background: rgb(0, 0, 0);
+    color: #8f877dd5;
+ 
+   transition: filter 3s ease-out;
+   filter: blur(3.7px);
+   
+  
+   
+  
+   
+
+}
+
+.blur-effect {
+  filter: blur(5px);
+}
+
+
+.stop-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(36, 18, 18, 0.479);
+  color: rgba(161, 161, 161, 0.849);
+  border: 2px solid #00000000;
+  width: 58px;
+  height: 27px;
+  font-size: 10px;
+  font-weight:bold;
+  font-family: 'Jura', sans-serif; /* Add this line */
+  cursor: pointer;
+  margin-bottom:7%;
+  border-style:outset;
+  border-radius: 20px; /* Adjust the border-radius value */
+  
+}
+
+
+    @font-face {
+  font-family: 'Jura';
+  src: url('/fonts/Jura-Medium.ttf') format('truetype');
+}
+
+
+:root {
+  --glow-color: #000000;
+ font-family: var(--font-family);
+ border-radius: 3px;
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+     
+            .glowing-btn:hover {
+            color: rgba(230, 230, 230, 0.911);
+            text-shadow: none;
+            animation: none;
+            }
+
+            .glowing-btn:hover .glowing-txt {
+            animation: ntext-flicker 3s infinite;
+            }
+
+            .glowing-btn:hover .faulty-letter {
+            animation: faulty-flicker 1s infinite;
+            text-shadow: none;
+            opacity: 0.3;
+            }
+
+            .glowing-btn:hover:before {
+            animation: border-flicker 3s infinite;
+            filter: blur(3.5em);
+            opacity: 1;
+            }
+
+            .glowing-btn .faulty-letter-T {
+    animation: faulty-flicker-T 1.9s infinite;
+}
+
+          .glowing-btn .faulty-letter-S {
+              animation: faulty-flicker-S 4s infinite;
+          }
+          @keyframes faulty-flicker-T {
+              0%, 5% {
+                  opacity: 1;
+              }
+              5.1%, 5.5% {
+                  opacity: 0;
+              }
+              5.6%, 95% {
+                  opacity: 1;
+              }
+              95.1%, 95.5% {
+                  opacity: 0;
+              }
+              95.6%, 100% {
+                  opacity: 1;
+              }
+          }
+
+          @keyframes faulty-flicker-S {
+              0%, 10% {
+                  opacity: 1;
+              }
+              10.1%, 10.5% {
+                  opacity: 0;
+              }
+              10.6%, 70% {
+                  opacity: 1;
+              }
+              70.1%, 70.5% {
+                  opacity: 0;
+              }
+              70.6%, 100% {
+                  opacity: 1;
+              }
+          }
+                  
+           
+         
+    
+          .button {
+                font-size: 9px;
+            font-family: var(--font-family);
+          padding-top: 0.2%;
+          }
+
+          .button-container {
+          animation: moveUpDown 7s ease-out infinite;
+          scroll-padding-right: 20px;
+          }
+
+          @keyframes moveUpDown {
+          0% {
+          transform: translateY(14);
+          }
+          50% {
+          transform: translateY(-8px);
+          }
+          70% {
+          transform: translateY(2);
+          }
+          }
+          .stop-button.active + .button-glowing .glowing-btn {
+          filter: blur(5px);
+          }
+
+          .stop-button.active {
+          display: block;
+          }
+
+            
+         .glowing-btn .faulty-letter {
+           animation: faulty-flicker 0.3s infinite;
+}
+         .glowing-btn .font {
+         font-family: 'Jura', sans-serif;
+      
+         }
+
+        .glowing-btn .font,
+        .glowing-btn .font .regular-txt,
+        .glowing-btn .font .faulty-letter-T,
+        .glowing-btn .font .faulty-letter-S {
+          color: rgb(184, 164, 164); /* Replace #your-color with the desired color for all the letters */
+        }
+
+
+               
+        </style>
+    <script>
+      window.onload = function() {
+          const scrollToBottom = (id) => {
+              const element = document.getElementById(id);
+              element.scrollTop = element.scrollHeight;
+          }
+  
+          const scrollToTop = (id) => {
+              const element = document.getElementById(id);
+              element.scrollTop = 1;
+          }
+  
+          let scrollingAnimation;
+  
+          const scrollSmoothToBottom = (id) => {
+              const element = $(`#${id}`);
+              scrollingAnimation = element.animate({
+                  scrollTop: element.prop("scrollHeight")
+              }, 111111); // Set the duration of the scrolling animation to 100 seconds (100000 milliseconds)
+          }
+  
+          const stopScrolling = () => {
+              if (scrollingAnimation) {
+                  scrollingAnimation.stop();
+              }
+          }
+  
+          window.scrollSmoothToBottom = scrollSmoothToBottom;
+          window.stopScrolling = stopScrolling;
+  
+          let isScrolling = false;
+          const toggleScrolling = () => {
+              if (isScrolling) {
+                  if (scrollingAnimation) {
+                      scrollingAnimation.stop();
+                  }
+                  isScrolling = false;
+              } else {
+                  // Calculate the remaining scroll height and adjust the duration accordingly
+                  const element = $(`#image-container`);
+                  const remainingScrollHeight = element.prop("scrollHeight") - element.scrollTop();
+                  const duration = 100000 * (remainingScrollHeight / element.prop("scrollHeight"));
+  
+                  scrollingAnimation = element.animate({
+                      scrollTop: element.prop("scrollHeight")
+                  }, duration);
+  
+                  isScrolling = true;
+              }
+          }
+      }
+  </script>
+      
+        
+   </head>
+   <body>
+      <div id="root"></div>
+      <div class="back-button">
+          <a href="index.html" class="back-to-main-page" onclick="backToMainPage(event)">Back</a>
+      </div>
+      <div class="section section1">
+          <h1 class="truemiragemusic">True Mirage</h1>
+          <div class="rounded-border"></div>
+          <div class="gallery">
+              <div class="button-container">
+                  <div class="button-glowing">
+                     <button class="glowing-btn" onClick="scrollSmoothToBottom('image-container')">
+                        <div class="font">
+                            <span class="regular-txt">S</span>
+                            <span class="faulty-letter-T">T</span>
+                            <span class="regular-txt">A</span>
+                            <span class="regular-txt">R</span>
+                            <span class="faulty-letter-S">T</span>
+                        </div>
+                      </button>
+                      <br><br>
+                  </div>
+               </div>
+                  <div>
+                     <button class="stop-button" onClick="stopScrolling()">STOP</button>
+                  </div>
+              </div>
+              <div id="image-container">
+              <br>
+             <br> <br>
+             
+               <img src="images/m3.jpeg" alt="mid journey">
+
+               <br>
+               <img src="images/m1.png" alt="mid journey">
+
+               <br>
+
+               <img src="images/m2.png" alt="mid journey">
+               <br>
+               <img src="images/m6.png" alt="mid journey">
+               <br>
+               <img src="images/m7.png" alt="mid journey">
+               <br>
+               <img src="images/m8.png" alt="mid journey">
+               <br>
+               <img src="images/m9.png" alt="mid journey">
+                <br>
+               <img src="images/m10.png" alt="mid journey">
+               <br>
+               <img src="images/m5.png" alt="mid journey">
+                <br>
+               <img src="images/m11.png" alt="mid journey">
+                <br>
+               <img src="images/m12.jpeg" alt="mid journey"> <br>
+               <img src="images/m13.jpeg" alt="mid journey">
+                <br>
+               <img src="images/m14.jpeg "alt="mid journey">
+               <br>
+               <img src="images/m15.png" alt="mid journey">
+                <br>
+               <img src="images/m16.png" alt="mid journey">
+                <br>
+               <img src="images/m17.png" alt="mid journey">
+                <br>
+               <img src="images/m18.png" alt="mid journey">
+                <br>
+               <img src="images/m4.png" alt="mid journey">
+              
+              
+               <br>
+               <img src="images/m19.png" alt="mid journey">
+                <br>
+               <img src="images/m20.png" alt="mid journey">
+                <br>
+               <img src="images/m21.png" alt="mid journey">
+                <br>
+               <img src="images/m22.png" alt="mid journey">
+                <br>
+               <img src="images/m23.png" alt="mid journey">
+                <br>
+               <img src="images/m24.jpeg" alt="mid journey">
+                <br>
+               <img src="images/m25.png" alt="mid journey"> <br>
+               <img src="images/m26.png" alt="mid journey"> <br>
+               <img src="images/m27.png" alt="mid journey">
+               <br>
+               <img src="images/m28.png" alt="mid journey">
+               
+            </div>
+         </div>
+      </div>
+
+         
+         <br>
+       
+
+      
+       <script src="script.js"></script>
+      <div class="footer">
+         <p>&copy; 2023 True Mirage</p>
+      </div>
+       
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="script.js"></script>
+    
+   </body>
+</html>
