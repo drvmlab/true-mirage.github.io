@@ -31,6 +31,7 @@ body {
   transition: color 0.7s ease-out;
 }
 
+
 #floating-text:hover {
   opacity: 2;
   color: rgba(224, 218, 218, 0.774); /* Set the color to a lighter shade when hovered */
@@ -93,15 +94,7 @@ body {
   }
 }
 
-#floating-text {
-  font-family: "Jura";
-  src: url("/fonts/Jura-Medium.ttf") format("truetype");
-  font-size: 200%;
-  transition: filter 1.7s ease-out;
-  margin-bottom: 100px;
-  margin-top: 60px;
-  transition: color 0.7s ease-out;
-}
+
 
 .header {
   margin-bottom: 10px;
