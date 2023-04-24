@@ -565,7 +565,7 @@ footer {
 }
 
 .gallery {
-  display: flex;
+  display:inline-flex;
   flex-direction: column;
   align-items: center;
 }
