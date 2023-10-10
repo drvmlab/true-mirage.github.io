@@ -1,0 +1,762 @@
+body {
+  overflow-x: visible;
+  background-color: #000000;
+  color: rgba(108, 108, 108, 0.911);
+  font-family: 'Lot-Regular', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+
+  .landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */ /* Optional: You can set the height of the landing section */
+  }
+
+  #floating-text {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif; /* Specify your preferred sans-serif font stack */
+    font-size: 20px; /* You can adjust the font size as needed */
+    margin-bottom: 100px;
+    margin-top: 19px;
+    transition: filter 2s ease-out, color 0.4s ease-out;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+#floating-text:hover {
+  opacity: 1;
+  color: rgb(178, 170, 170); /* Set the color to a lighter shade when hovered */
+}
+
+.h3 {
+  width: 100%;
+  font-size: 50%;
+}
+header h3 {
+  width: 100%;
+  font-size: 1rem; /* Adjust the font size to your preference */
+  animation: moveUpDown 9.2s ease-out infinite;
+}
+
+
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-100);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Gallery Styles */
+
+body.gallery {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  margin: 0rem;
+  overflow: hidden;
+}
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+
+/* End of Gallery Styles */
+
+.gallery {
+  width: 50%;
+  margin: 0 auto;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.main-title:hover {
+  filter: blur(30px);
+  opacity: 0.3;
+}
+
+.main-title {
+  opacity: 20%;
+  transform: translateY(100%);
+  animation: fade-in-top 1s ease forwards;
+  font-size: 7em;
+  font-family:  "Lot-Regular";
+  transition: filter 15s ease-out;
+
+  
+}
+
+.main-title-line {
+  color: #baa8a8; /* Change this to your desired color value */
+}
+
+
+
+
+
+
+
+@keyframes fade-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(7%);
+  }
+}
+
+
+
+.header {
+  margin-bottom: 10px;
+  text-align: justify;
+  margin-left: 200px;
+  margin-right: 200px;
+  opacity: 0;
+  transform: translateY(30%);
+  animation: fade-in-top 4.5s ease forwards;
+  transform: translateX(10%);
+  font-family: "Puente-Estrecho-St";
+}
+
+.section1 {
+  padding-top: 100px; /* add 200px of padding to the top */
+}
+
+.section {
+  position: relative;
+  padding: 100px;
+  text-align: center;
+}
+
+.section .banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Add a fixed width */
+  height: 360px; /* Keep the fixed height */
+}
+
+.section .banner img {
+  position: absolute;
+  left: 100;
+  top: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(10%);
+  transition: transform 4s ease-out, filter 1s ease-out;
+}
+
+.section:hover .banner img,
+.section:focus .banner img {
+  transform: translateY(1%);
+
+  filter: blur(0px);
+}
+
+.section {
+  position: relative;
+  padding: 39px;
+  text-align: center;
+}
+
+.section:hover h2 {
+  transform: translateX(-6%) translateY(0%);
+  opacity: 0;
+  filter: blur(30%);
+  transition: transform 0.5s, opacity 0.8s, filter 5s;
+}
+
+.section .banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e0e0e0;
+  font-size: 1.4rem;
+  font-family: "Thasadith", sans-serif;
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.8s ease-out;
+
+
+  /* Add the blur class initially */
+  /* Remove the opacity property */
+  /* Add the active class on hover */
+}
+.section .banner:hover .title {
+  opacity: 1;
+  filter: blur(0px);
+}
+/* Add the blur class for the desired blur effect */
+.section .banner .title.blur {
+  filter: blur(3px);
+  opacity: 10;
+}
+.section .banner:hover .title {
+  opacity: 9; /* Set the opacity to 1 on hover */
+}
+.section .banner:not(:hover) .title {
+  opacity: 1;
+  filter: blur(5px);
+  animation: fade-out 0.7s forwards;
+}
+.section .banner .title:not(:hover) {
+  transition: all 0.4s ease-out;
+}
+
+/* Add the active class for the desired animation effect */
+.section .banner:hover .title.active {
+  filter: blur(9px);
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  transition: filter 0.9s ease-out;
+}
+
+
+.banner-image {
+  animation: moveUpDown 14s ease-in-out infinite;
+  
+  max-width: 170%;
+  max-height:80%;
+  height: auto;
+  object-fit:cover;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(-4%);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 30px);
+  }
+  50% {
+    transform: translate(0, 40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes banner-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(80);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    left: -70%;
+  }
+  100% {
+    left: 80%;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 30%;
+  }
+}
+
+@keyframes blur-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 100;
+    filter: blur(7px);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 60;
+  }
+}
+.section title.fade-out {
+  animation-name: fade-out;
+  animation-duration: 9s;
+  animation-fill-mode: forwards;
+}
+
+
+.back-to-main-page:hover,
+.back-to-main-page:focus {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.back-to-main-page:hover,
+.back-to-main-page:focus {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.move-out-right {
+  opacity: 1;
+  transform: translateX(130%);
+  transition: all 0.9s ease-out;
+}
+
+@keyframes moveOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.banner h2 {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  z-index: 7;
+  font-size: 4rem;
+  font-family: "Thasadith", sans-serif;
+  color: rgba(189, 8, 8, 0.911);
+}
+
+.section:nth-child(even) {
+  background-color: #020202f6;
+
+
+}
+
+
+.appointment-heading {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-family: "Thasadith", sans-serif;
+  color: rgba(216, 216, 216, 0.877);
+  z-index: 1;
+  opacity: 0;
+  filter: blur(5px);
+  animation: moveFromTopToCenter 2s ease-out forwards;
+}
+
+.section3 .appointment-heading.visible:hover {
+  animation-name: move-out-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+.footer {
+  margin-top: 20%;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.709);
+  font-family: "jura" !important;
+  
+
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 5.2s ease;
+}
+
+.banner-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+.banner-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-100%);
+  color: rgb(255, 255, 255);
+  font-size: 6rem;
+  font-family: "Thasadith", sans-serif;
+  opacity: 2;
+  filter: blur(0.7px);
+  animation: scroll-title 0.2s forwards;
+  padding: 90px;
+  margin-bottom: 300px;
+  background: transparent;
+  z-index: 1;
+
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Safari-specific CSS here */
+}
+
+@keyframes fade-out-blur {
+  from {
+    opacity: 0;
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    filter: blur(9px);
+  }
+}
+
+.banner-title:hover {
+  transform: translate(100%);
+}
+.banner-image {
+  transform: translate3d(0, 0, 0);
+}
+
+footer {
+  font-family: "jura" !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.move-out-right {
+  opacity: 2;
+  transform: translateX(10%);
+  transition: all 2s ease-out;
+}
+
+.section h2 {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  margin-left: 10%;
+  margin-top: 1%;
+  font-size: 4rem;
+  font-family: "Thasadith", sans-serif;
+  color: rgba(216, 216, 216, 0.877);
+  z-index: 1;
+  opacity: 0;
+  filter: blur(5);
+  animation: moveFromLeftToCenter 2s ease-out forwards;
+}
+
+.section h2.visible:hover {
+  animation-name: move-out-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.footer form {
+  font-size: 1.2em; /* Adjust the form scale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Thasadith", sans-serif;
+  color: rgb(197, 197, 197);
+  margin-top: 20%;
+}
+.footer form textarea {
+  height: 49px;
+}
+
+.footer form input[type="text"],
+.footer form input[type="email"] {
+  width: 18%;
+  margin: 5px;
+  padding: 0.5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: "Jura";
+  height: 27px;
+}
+
+.footer form textarea {
+  width: 18%;
+  margin: 5px;
+  padding: 0.5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: "Jura";
+  height: 100px; /* Set a larger height for the message textarea */
+}
+
+
+@font-face {
+  font-family: 'Lot-Regular'; /* Specify the font family name you want to use */
+  src: url('fonts/Lot-Regular.ttf') format('truetype'); /* Provide the correct path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.main-title {
+  font-family: 'Lot-Regular', sans-serif; /* Change to 'RadicalBlock' if that's the font you want to use */
+}
+
+.social-icon img {
+  width: 10px;
+  height: 10px;
+}
+
+
+
+.footer form input[type="submit"] {
+   
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   margin-bottom: 5%;
+   font-family: "Thasadith", sans-serif;
+   cursor: pointer;
+   background-color: rgb(102, 59, 59);
+   color: rgb(216, 215, 215);
+   transition: all 0.2s ease-in-out;
+   filter: brightness(120%);
+  /* Moved from .footer form input:hover selector */
+ }
+ 
+ .footer form input[type="submit"]:hover {
+   background-color: rgba(46, 46, 46, 0.466);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   color: rgba(255, 255, 255, 0.8);
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+   filter: blur(9%); /* Add the blur effect */
+   transition: all 0.2s ease-in-out;
+ }
+ 
+
+
+.footer-social-icons {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons li {
+  margin: 0 10px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(172, 85, 85);
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img {
+  width: 50px; /* Adjust the width according to your desired size */
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.5s ease-in-out;
+}
+
+.social-icons li {
+  margin: 0 15px; /* Adjust the margin values according to your desired spacing */
+}
+
+#image-container {
+  height: 500px; /* set the height to a fixed value */
+}
+
+.gallery {
+  display:inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.social-icons li:hover img {
+  transform: translateY(-7px);
+  transition: all 0.1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .landing {
+    height: auto;
+  }
+
+  .gallery {
+    width: 100%;
+  }
+
+  .main-title {
+    font-size: 6em;
+  }
+  
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .footer form input[type="text"],
+  .footer form input[type="email"],
+  .footer form textarea {
+    width: 90%;
+    font-size: 10px;
+    
+  }
+}
+
+
+.appointment-banner {
+  background-color: #868686; /* Customize the background color */
+  color: #a3a3a3; /* Text color */
+  text-align: center;
+  padding: 40px;
+  margin-top: 5%;
+ 
+
+}
+
+.appointment-banner {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #434242; /* Customize the button color */
+  color: #282828; /* Button text color */
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 1.2rem; /* Customize the font size */
+  transition: background-color 0.9s;
+}
+.appointment-banner:hover {
+  background-color: #5b5b5b; /* Customize the button hover color *
+.appointment-heading {
+  font-size: 2rem; /* Customize the font size */
+  margin-bottom: 10px;
+}
+
+.appointment-description {
+  font-size: 1.2rem; /* Customize the font size */
+  margin-bottom: 20px;
+  color: #d9d9d9;
+}
+
+.appointment-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #434242; /* Customize the button color */
+  color: #dcdcdc; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem; /* Customize the font size */
+  transition: background-color 0.2s;
+}
+
+.appointment-button:hover {
+  background-color: #d08d40; /* Customize the button hover color */
+}
+
+
+.social-icon {
+  display: inline-block;
+  width: 40px; /* Adjust this value to control the size of the circle */
+  height: 40px; /* Make it a square to create a circle */
+  border-radius: 50%; /* Makes it a circle */
+  overflow: hidden; /* Hide overflowing content */
+  margin: 5px; /* Adjust the margin as needed */
+  background-color: #7a3c3c; /* Set the background color of the circle */
+  text-align: center; /* Center the icon horizontally and vertically */
+  line-height: 40px; /* Vertically center the icon */
+}
+
+/* Style the image within the circular container */
+.social-icon img {
+  max-width: 100%; /* Ensure the image fits within the circle */
+  max-height: 100%; /* Ensure the image fits within the circle */
+}
