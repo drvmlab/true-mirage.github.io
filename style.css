@@ -1,8 +1,8 @@
 body {
-  overflow-x: hidden;
+  overflow-x: visible;
   background-color: #000000;
-  color: rgba(122, 116, 116, 0.911);
-  font-family: Arial, sans-serif;
+  color: rgba(108, 108, 108, 0.911);
+  font-family: 'Lot-Regular', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -10,45 +10,47 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 200vh;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
 }
 
-.landing {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Optional: You can set the height of the landing section */
-}
 
-#floating-text {
-   display: inline-block;
-  font-family: "Thasadith", sans-serif;
-  font-size: 200%;
-  transition: filter 1.7s ease-out;
-  margin-bottom: 100px;
-  margin-top: 60px;
-  transition: color 0.7s ease-out;
+  .landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */ /* Optional: You can set the height of the landing section */
+  }
+
+  #floating-text {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif; /* Specify your preferred sans-serif font stack */
+    font-size: 20px; /* You can adjust the font size as needed */
+    margin-bottom: 100px;
+    margin-top: 19px;
+    transition: filter 2s ease-out, color 0.4s ease-out;
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 
 #floating-text:hover {
-  opacity: 2;
-  color: rgba(224, 218, 218, 0.774); /* Set the color to a lighter shade when hovered */
-  
+  opacity: 1;
+  color: rgb(178, 170, 170); /* Set the color to a lighter shade when hovered */
 }
 
 .h3 {
   width: 100%;
   font-size: 50%;
-
+}
+header h3 {
+  width: 100%;
+  font-size: 1rem; /* Adjust the font size to your preference */
+  animation: moveUpDown 9.2s ease-out infinite;
 }
 
-.header h3 {
 
-  animation: moveUpDown 8.2s ease-out infinite;
-
-}
 
 @keyframes moveUpDown {
   0% {
@@ -61,6 +63,36 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Gallery Styles */
+
+body.gallery {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  margin: 0rem;
+  overflow: hidden;
+}
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+
+/* End of Gallery Styles */
 
 .gallery {
   width: 50%;
@@ -77,17 +109,30 @@ body {
 }
 
 .main-title {
-  opacity: 0;
-  transform: translateY(36%);
-  animation: fade-in-top 2s ease forwards;
-  font-size: 13em;
-  font-family: "Thasadith", sans-serif;
-  transition: filter 9s ease-out;
+  opacity: 20%;
+  transform: translateY(100%);
+  animation: fade-in-top 1s ease forwards;
+  font-size: 7em;
+  font-family:  "Lot-Regular";
+  transition: filter 15s ease-out;
+
+  
 }
+
+.main-title-line {
+  color: #baa8a8; /* Change this to your desired color value */
+}
+
+
+
+
+
+
+
 @keyframes fade-in-top {
   from {
     opacity: 0;
-    transform: translateY(-70%);
+    transform: translateY(-20%);
   }
   to {
     opacity: 1;
@@ -100,27 +145,30 @@ body {
 .header {
   margin-bottom: 10px;
   text-align: justify;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
   opacity: 0;
   transform: translateY(30%);
   animation: fade-in-top 4.5s ease forwards;
   transform: translateX(10%);
+  font-family: "Puente-Estrecho-St";
 }
 
 .section1 {
-  padding-top: 200px; /* add 200px of padding to the top */
+  padding-top: 100px; /* add 200px of padding to the top */
 }
 
 .section {
   position: relative;
-  padding: 39px;
+  padding: 100px;
   text-align: center;
 }
 
 .section .banner {
   position: relative;
   overflow: hidden;
+  width: 100%; /* Add a fixed width */
+  height: 360px; /* Keep the fixed height */
 }
 
 .section .banner img {
@@ -129,13 +177,13 @@ body {
   top: 0;
   width: 100%;
   height: auto;
-  transform: translateY(40%);
-  transition: transform 2s ease-out, filter 1s ease-out;
+  transform: translateY(10%);
+  transition: transform 4s ease-out, filter 1s ease-out;
 }
 
 .section:hover .banner img,
 .section:focus .banner img {
-  transform: translateY(-28%);
+  transform: translateY(1%);
 
   filter: blur(0px);
 }
@@ -147,10 +195,10 @@ body {
 }
 
 .section:hover h2 {
-  transform: translateX(0%) translateY(0%);
+  transform: translateX(-6%) translateY(0%);
   opacity: 0;
-  filter: blur(6%);
-  transition: transform 1s, opacity 1s, filter 1s;
+  filter: blur(30%);
+  transition: transform 0.5s, opacity 0.8s, filter 5s;
 }
 
 .section .banner .title {
@@ -158,34 +206,37 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #e0e0e0;
   font-size: 1.4rem;
   font-family: "Thasadith", sans-serif;
   opacity: 0;
   filter: blur(5px);
   transition: all 0.8s ease-out;
 
+
   /* Add the blur class initially */
   /* Remove the opacity property */
   /* Add the active class on hover */
 }
-
+.section .banner:hover .title {
+  opacity: 1;
+  filter: blur(0px);
+}
 /* Add the blur class for the desired blur effect */
 .section .banner .title.blur {
   filter: blur(3px);
-  opacity: 0;
+  opacity: 10;
 }
 .section .banner:hover .title {
-  opacity: 1; /* Set the opacity to 1 on hover */
+  opacity: 9; /* Set the opacity to 1 on hover */
 }
 .section .banner:not(:hover) .title {
   opacity: 1;
   filter: blur(5px);
-  animation: fade-out 0.9s forwards;
+  animation: fade-out 0.7s forwards;
 }
-.section .banner img:not(:hover) {
-  filter: blur(5px);
-  transition: filter 0.4s ease-out;
+.section .banner .title:not(:hover) {
+  transition: all 0.4s ease-out;
 }
 
 /* Add the active class for the desired animation effect */
@@ -193,40 +244,36 @@ body {
   filter: blur(9px);
   opacity: 1;
   transform: translate(-50%, -50%);
-  filter: blur(5px);
-  transition: filter 0.4s ease-out;
+  filter: blur(2px);
+  transition: filter 0.9s ease-out;
 }
 
-.banner-title.fade-out {
-  /* Only animate the opacity and blur */
-  opacity: 0;
-  filter: blur(3px);
-  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
-}
+
 .banner-image {
-  animation: moveUpDown 4s ease-in-out infinite;
-
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  animation: moveUpDown 14s ease-in-out infinite;
+  
+  max-width: 170%;
+  max-height:80%;
+  height: auto;
+  object-fit:cover;
 }
 
 @keyframes moveUpDown {
   0%,
   100% {
-    transform: translateY(-5%);
+    transform: translateY(-4%);
   }
-  50% {
+  100% {
     transform: translateY(10px);
   }
 }
 
 @keyframes floating {
   0% {
-    transform: translate(0, 4px);
+    transform: translate(0, 30px);
   }
   50% {
-    transform: translate(0, 9px);
+    transform: translate(0, 40px);
   }
   100% {
     transform: translate(0, 0);
@@ -238,16 +285,16 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(40);
+    transform: translateY(80);
   }
   100% {
-    transform: translateY(100);
+    transform: translateY(0);
   }
 }
 
 @keyframes slide-in {
   0% {
-    left: -10%;
+    left: -70%;
   }
   100% {
     left: 80%;
@@ -256,7 +303,7 @@ body {
 
 @keyframes slide-out {
   0% {
-    left: -20%;
+    left: -40%;
   }
   100% {
     left: 30%;
@@ -266,7 +313,7 @@ body {
 @keyframes blur-fade-in {
   0% {
     opacity: 0;
-    filter: blur(3px);
+    filter: blur(2px);
   }
   100% {
     opacity: 100;
@@ -279,7 +326,7 @@ body {
     opacity: 0;
   }
   100% {
-    opacity: 100;
+    opacity: 60;
   }
 }
 .section title.fade-out {
@@ -318,19 +365,44 @@ body {
 
 .banner h2 {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-  font-size: 1.4rem;
+  top: 80px;
+  left: 100px;
+  z-index: 7;
+  font-size: 4rem;
   font-family: "Thasadith", sans-serif;
-  color: rgba(253, 252, 252, 0.911);
+  color: rgba(189, 8, 8, 0.911);
 }
 
 .section:nth-child(even) {
   background-color: #020202f6;
+
+
 }
 
+
+.appointment-heading {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-family: "Thasadith", sans-serif;
+  color: rgba(216, 216, 216, 0.877);
+  z-index: 1;
+  opacity: 0;
+  filter: blur(5px);
+  animation: moveFromTopToCenter 2s ease-out forwards;
+}
+
+.section3 .appointment-heading.visible:hover {
+  animation-name: move-out-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
 .footer {
+  margin-top: 20%;
   padding: 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.709);
@@ -357,7 +429,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.9s ease;
+  transition: transform 5.2s ease;
 }
 
 .banner-link {
@@ -371,26 +443,24 @@ body {
 }
 .banner-title {
   position: absolute;
-  top: 40px;
-  bottom: 7;
-  left: 50px;
-  color: rgb(139, 139, 139);
-  font-size: 2rem;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-100%);
+  color: rgb(255, 255, 255);
+  font-size: 6rem;
   font-family: "Thasadith", sans-serif;
-  opacity: 5;
+  opacity: 2;
   filter: blur(0.7px);
-  animation: scroll-title 0.9s forwards;
-  transform: translateX(90%);
-  padding: 10px;
+  animation: scroll-title 0.2s forwards;
+  padding: 90px;
+  margin-bottom: 300px;
   background: transparent;
+  z-index: 1;
+
 }
 
-.animate-title-blur {
-  animation-name: fade-out-blur;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  filter: blur(4px);
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Safari-specific CSS here */
 }
 
 @keyframes fade-out-blur {
@@ -400,12 +470,15 @@ body {
   }
   to {
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(9px);
   }
 }
 
 .banner-title:hover {
   transform: translate(100%);
+}
+.banner-image {
+  transform: translate3d(0, 0, 0);
 }
 
 footer {
@@ -449,6 +522,7 @@ footer {
   align-items: center;
   font-family: "Thasadith", sans-serif;
   color: rgb(197, 197, 197);
+  margin-top: 20%;
 }
 .footer form textarea {
   height: 49px;
@@ -477,9 +551,17 @@ footer {
   height: 100px; /* Set a larger height for the message textarea */
 }
 
+
 @font-face {
-  font-family: "Jura";
-  src: url("/fonts/Jura-Medium.ttf") format("truetype");
+  font-family: 'Lot-Regular'; /* Specify the font family name you want to use */
+  src: url('fonts/Lot-Regular.ttf') format('truetype'); /* Provide the correct path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.main-title {
+  font-family: 'Lot-Regular', sans-serif; /* Change to 'RadicalBlock' if that's the font you want to use */
 }
 
 .social-icon img {
@@ -487,12 +569,14 @@ footer {
   height: 10px;
 }
 
+
+
 .footer form input[type="submit"] {
    
    border: none;
    border-radius: 5px;
    font-size: 16px;
-   margin-bottom: 10%;
+   margin-bottom: 5%;
    font-family: "Thasadith", sans-serif;
    cursor: pointer;
    background-color: rgb(102, 59, 59);
@@ -594,6 +678,7 @@ footer {
   .main-title {
     font-size: 6em;
   }
+  
 
   .section h2 {
     font-size: 2rem;
@@ -606,4 +691,72 @@ footer {
     font-size: 10px;
     
   }
+}
+
+
+.appointment-banner {
+  background-color: #868686; /* Customize the background color */
+  color: #a3a3a3; /* Text color */
+  text-align: center;
+  padding: 40px;
+  margin-top: 5%;
+ 
+
+}
+
+.appointment-banner {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #434242; /* Customize the button color */
+  color: #282828; /* Button text color */
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 1.2rem; /* Customize the font size */
+  transition: background-color 0.9s;
+}
+.appointment-banner:hover {
+  background-color: #5b5b5b; /* Customize the button hover color *
+.appointment-heading {
+  font-size: 2rem; /* Customize the font size */
+  margin-bottom: 10px;
+}
+
+.appointment-description {
+  font-size: 1.2rem; /* Customize the font size */
+  margin-bottom: 20px;
+  color: #d9d9d9;
+}
+
+.appointment-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #434242; /* Customize the button color */
+  color: #dcdcdc; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem; /* Customize the font size */
+  transition: background-color 0.2s;
+}
+
+.appointment-button:hover {
+  background-color: #d08d40; /* Customize the button hover color */
+}
+
+
+.social-icon {
+  display: inline-block;
+  width: 40px; /* Adjust this value to control the size of the circle */
+  height: 40px; /* Make it a square to create a circle */
+  border-radius: 50%; /* Makes it a circle */
+  overflow: hidden; /* Hide overflowing content */
+  margin: 5px; /* Adjust the margin as needed */
+  background-color: #7a3c3c; /* Set the background color of the circle */
+  text-align: center; /* Center the icon horizontally and vertically */
+  line-height: 40px; /* Vertically center the icon */
+}
+
+/* Style the image within the circular container */
+.social-icon img {
+  max-width: 100%; /* Ensure the image fits within the circle */
+  max-height: 100%; /* Ensure the image fits within the circle */
 }
