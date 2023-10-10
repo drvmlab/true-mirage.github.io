@@ -15,6 +15,29 @@ body {
  
 }
 
+/* Default styles for larger screens */
+h1 {
+  font-size: 2rem;
+}
+
+/* Media query for smartphones */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    /* Add any other necessary adjustments */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Styles for tablets */
+  /* Adjust font sizes, margins, padding, etc. */
+}
+
+/* Media query for smartphones */
+@media screen and (max-width: 480px) {
+  /* Styles for smartphones */
+  /* Further adjustments as needed */
+}
 
   .landing {
     display: flex;
