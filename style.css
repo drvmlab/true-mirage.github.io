@@ -23,9 +23,7 @@ body {
 @media (max-width: 375px) {
   /* Add your mobile-specific styles here */
 }
-.main-title {
-  font-size: 4rem; /* Change to font-size: 4em; or font-size: 4rem; */
-}
+
 
 .header h3 {
   font-size: 1rem; /* Change to a relative unit like font-size: 1em; */
@@ -135,6 +133,11 @@ body.gallery {
   font-size: 7em;
   font-family:  "Lot-Regular";
   transition: filter 15s ease-out;
+  
+    font-size: 4rem; /* Adjust the size as needed */
+    padding: 10px; /* Add padding to create space around the title */
+    margin: 0; /* Reset margins if necessary */
+
 
   
 }
