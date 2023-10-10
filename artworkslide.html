@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="all" as="style">
+  
+
+    <title>Sliding Image Track</title>
+    <style>
+      body {
+          height: 100vh;
+          width: 100vw;
+          background-color: black;
+          margin: 0;
+          overflow: hidden;
+      }
+
+      #image-track {
+          display: flex;
+          gap: 4vmin;
+          position: absolute;
+          left: 35%;
+          top: 50%;
+          transform: translate(0%, -50%);
+          user-select: none;
+          transition: transform 1.2s ease; /* Add a transition for smooth sliding */
+      }
+
+      #image-track > .image {
+          width: 40vmin;
+          height: 56vmin;
+          object-fit: cover;
+          object-position: 100% center;
+          transition: object-position 1.2s ease; /* Add a transition for smooth sliding */
+      }
+  </style>
+</head>
+<body>
+  <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <img class="image" src="images/artworks/P1.png" draggable="false" />
+    <img class="image" src="images/artworks/P3.png" draggable="false" />
+    <img class="image" src="images/artworks/P4.png" draggable="false" />
+    <img class="image" src="images/artworks/P5.png" draggable="false" />
+    <img class="image" src="images/artworks/P6.png" draggable="false" />
+    <img class="image" src="images/artworks/P7.png" draggable="false" />
+    <img class="image" src="images/artworks/P8.png" draggable="false" />
+    <img class="image" src="images/artworks/P12.png" draggable="false" />
+    <img class="image" src="images/artworks/P13.png" draggable="false" />
+    <img class="image" src="images/artworks/P14.png" draggable="false" />
+    <img class="image" src="images/artworks/P15.png" draggable="false" />
+    <img class="image" src="images/artworks/P17.png" draggable="false" />
+    <img class="image" src="images/artworks/P18.png" draggable="false" />
+    <img class="image" src="images/artworks/P19.png" draggable="false" />
+    <img class="image" src="images/artworks/P20.png" draggable="false" />
+    <img class="image" src="images/artworks/P21.png" draggable="false" />
+    <img class="image" src="images/artworks/P22.png" draggable="false" />
+    <img class="image" src="images/artworks/P23.png" draggable="false" />
+    <img class="image" src="images/artworks/P25.png" draggable="false" />
+    <img class="image" src="images/artworks/P26.png" draggable="false" />
+    <img class="image" src="images/artworks/P27.png" draggable="false" />
+    <img class="image" src="images/artworks/P28.png" draggable="false" />
+    
+    <img class="image" src="images/artworks/P29.png" draggable="false" />
+    <img class="image" src="images/artworks/P30.png" draggable="false" />
+    <img class="image" src="images/artworks/P31.png" draggable="false" />
+    <img class="image" src="images/artworks/P33.png" draggable="false" />
+    <img class="image" src="images/artworks/F1.png" draggable="false" />
+    <img class="image" src="images/artworks/F2.png" draggable="false" />
+    <img class="image" src="images/artworks/F3.png" draggable="false" />
+    <img class="image" src="images/artworks/F4.png" draggable="false" />
+    <img class="image" src="images/artworks/F5.png" draggable="false" />
+    <img class="image" src="images/artworks/F6.png" draggable="false" />
+    <img class="image" src="images/artworks/F7.png" draggable="false" />
+    <img class="image" src="images/artworks/F8.png" draggable="false" />
+    <img class="image" src="images/artworks/F3.png" draggable="false" />
+    <img class="image" src="images/artworks/F9.png" draggable="false" />
+    <img class="image" src="images/artworks/F11.png" draggable="false" />
+    <img class="image" src="images/artworks/F12.png" draggable="false" />
+    <img class="image" src="images/artworks/F13.png" draggable="false" />
+    <img class="image" src="images/artworks/F14.png" draggable="false" />
+    <img class="image" src="images/artworks/F15.png" draggable="false" />
+    <img class="image" src="images/artworks/F16.png" draggable="false" />
+    <img class="image" src="images/artworks/F17.png" draggable="false" />
+    <img class="image" src="images/artworks/F18.png" draggable="false" />
+
+   
+ 
+    </div>
+    
+    <script>
+     const track = document.getElementById("image-track");
+
+const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+const handleOnUp = () => {
+    track.dataset.mouseDownAt = "0";
+}
+
+const handleOnMove = e => {
+    if (track.dataset.mouseDownAt === "0") return;
+
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth / 2;
+
+    const percentage = (mouseDelta / maxDelta) * -100,
+        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+    track.dataset.prevPercentage = nextPercentage; // Update prevPercentage here
+
+    // Update the transform property for sliding
+    track.style.transform = `translate(${nextPercentage}%, -50%)`;
+
+    // Update the objectPosition for images to slide
+    for (const image of track.getElementsByClassName("image")) {
+        image.style.objectPosition = `${100 + nextPercentage}% center`;
+    }
+}
+
+window.onmousedown = e => handleOnDown(e);
+
+window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+window.onmouseup = e => handleOnUp(e);
+
+window.ontouchend = e => handleOnUp(e.touches[0]);
+
+window.onmousemove = e => handleOnMove(e);
+
+window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+  </script>
+</body>
+</html>
+    
+
+</body>
+</html>
