@@ -43,13 +43,18 @@ h1 {
 
   #floating-text {
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif; /* Specify your preferred sans-serif font stack */
+    font-family: "Puente-Estrecho-St"; /* Specify your preferred sans-serif font stack */
     font-size: 18px; /* You can adjust the font size as needed */
     margin-bottom: 100px;
     margin-top: 19px;
-    transition: filter 2s ease-out, color 0.4s ease-out;
+    transition: filter 2s ease-out, color 0.6s ease-out;
     text-align: center;
     margin-bottom: 100px;
+    font-size: 18px; /* Adjust the font size as needed */
+    line-height: 1.5; /* Add some line spacing for readability */
+    max-width: 100%; /* Ensure the text doesn't exceed the viewport width */
+  
+    width: 80%; 
 
       
       
@@ -719,10 +724,14 @@ footer {
   }
   
   .header {
-    padding: 10px; }
-    
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
   .section h2 {
     font-size: 2rem;
+  }
+
+  #floating-text {
+    font-size: 16px; /* Decrease font size on smaller screens */
   }
 
   .footer form input[type="text"],
