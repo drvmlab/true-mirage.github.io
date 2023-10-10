@@ -20,23 +20,27 @@ h1 {
   font-size: 2rem;
 }
 
-/* Media query for smartphones */
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
-    /* Add any other necessary adjustments */
+
+
+@media screen and (max-width: 375px) {
+  .landing {
+    text-align: center; /* Center align the text */
   }
-}
 
-@media screen and (max-width: 768px) {
-  /* Styles for tablets */
-  /* Adjust font sizes, margins, padding, etc. */
-}
+  .main-title {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
 
-/* Media query for smartphones */
-@media screen and (max-width: 480px) {
-  /* Styles for smartphones */
-  /* Further adjustments as needed */
+  .header {
+    margin-left: 10px; /* Adjust margins as needed */
+    margin-right: 10px;
+  }
+
+  #floating-text {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    margin-left: 10px; /* Adjust margins as needed */
+    margin-right: 10px;
+  }
 }
 
   .landing {
