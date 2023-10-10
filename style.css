@@ -2,7 +2,7 @@ body {
   overflow-x: visible;
   background-color: #000000;
   color: rgba(108, 108, 108, 0.911);
-  font-family: 'Lot-Regular', sans-serif;
+  font-family: 'Bangers-Regular', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -44,12 +44,22 @@ h1 {
   #floating-text {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif; /* Specify your preferred sans-serif font stack */
-    font-size: 20px; /* You can adjust the font size as needed */
+    font-size: 18px; /* You can adjust the font size as needed */
     margin-bottom: 100px;
     margin-top: 19px;
     transition: filter 2s ease-out, color 0.4s ease-out;
     text-align: center;
     margin-bottom: 100px;
+
+      
+      
+      line-height: 1.5; /* Add some line spacing for readability */
+      max-width: 100%; /* Ensure the text doesn't exceed the viewport width */
+      margin: 0 auto; /* Center-align the text horizontally */
+
+}
+#floating-text {
+  font-size: 16px; /* Decrease font size on smaller screens */
 }
 
 
@@ -131,7 +141,7 @@ body.gallery {
   transform: translateY(100%);
   animation: fade-in-top 1s ease forwards;
   font-size: 7em;
-  font-family:  "Lot-Regular";
+  font-family:  "Bangers-Regular";
   transition: filter 15s ease-out;
   
     font-size: 4rem; /* Adjust the size as needed */
@@ -155,11 +165,11 @@ body.gallery {
 @keyframes fade-in-top {
   from {
     opacity: 0;
-    transform: translateY(-20%);
+    transform: translateY(-7%);
   }
   to {
     opacity: 1;
-    transform: translateY(7%);
+    transform: translateY(22%);
   }
 }
 
@@ -174,7 +184,9 @@ body.gallery {
   transform: translateY(30%);
   animation: fade-in-top 4.5s ease forwards;
   transform: translateX(10%);
-  font-family: "Puente-Estrecho-St";
+ 
+  text-align: center; /* Center-align the text */
+  padding: 20px; 
 }
 
 .section1 {
@@ -231,7 +243,7 @@ body.gallery {
   transform: translate(-50%, -50%);
   color: #e0e0e0;
   font-size: 1.4rem;
-  font-family: "Thasadith", sans-serif;
+  font-family: "Bangers-Regular", sans-serif;
   opacity: 0;
   filter: blur(5px);
   transition: all 0.8s ease-out;
@@ -576,15 +588,16 @@ footer {
 
 
 @font-face {
-  font-family: 'Lot-Regular'; /* Specify the font family name you want to use */
-  src: url('fonts/Lot-Regular.ttf') format('truetype'); /* Provide the correct path to your font file */
+  font-family: 'Bangers-Regular'; /* Specify the font family name you want to use */
+  src: url('fonts/Bangers-Regular.ttf') format('truetype'); /* Provide the correct path to your font file */
   font-weight: normal;
   font-style: normal;
 }
 
 
+
 .main-title {
-  font-family: 'Lot-Regular', sans-serif; /* Change to 'RadicalBlock' if that's the font you want to use */
+  font-family: 'Bangers-Regular', sans-serif; /* Change to 'RadicalBlock' if that's the font you want to use */
 }
 
 .social-icon img {
@@ -689,11 +702,14 @@ footer {
   transition: all 0.1s ease-in-out;
 }
 
+
+
 @media (max-width: 768px) {
   .landing {
     height: auto;
   }
 
+  
   .gallery {
     width: 100%;
   }
@@ -702,7 +718,9 @@ footer {
     font-size: 6em;
   }
   
-
+  .header {
+    padding: 10px; }
+    
   .section h2 {
     font-size: 2rem;
   }
