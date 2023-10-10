@@ -15,33 +15,26 @@ body {
  
 }
 
+.banner-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 375px) {
+  /* Add your mobile-specific styles here */
+}
+.main-title {
+  font-size: 4rem; /* Change to font-size: 4em; or font-size: 4rem; */
+}
+
+.header h3 {
+  font-size: 1rem; /* Change to a relative unit like font-size: 1em; */
+}
 /* Default styles for larger screens */
 h1 {
   font-size: 2rem;
 }
 
-
-
-@media screen and (max-width: 375px) {
-  .landing {
-    text-align: center; /* Center align the text */
-  }
-
-  .main-title {
-    font-size: 2.5rem; /* Adjust font size for smaller screens */
-  }
-
-  .header {
-    margin-left: 10px; /* Adjust margins as needed */
-    margin-right: 10px;
-  }
-
-  #floating-text {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-    margin-left: 10px; /* Adjust margins as needed */
-    margin-right: 10px;
-  }
-}
 
   .landing {
     display: flex;
