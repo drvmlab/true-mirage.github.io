@@ -2,7 +2,7 @@ body {
   overflow-x: visible;
   background-color: #000000;
   color: rgba(108, 108, 108, 0.911);
-  font-family: 'Bangers-Regular', sans-serif;
+  font-family: 'Lot', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -18,9 +18,15 @@ body {
 .banner-image {
   max-width: 100%;
   height: auto;
+
+
+    max-width: 100%; /* Adjust the size as needed */
+   
+    margin: 5px; /* Add margin between images */
+
 }
 
-@media (max-width: 375px) {
+@media (max-width: 300px) {
   /* Add your mobile-specific styles here */
 }
 
@@ -37,28 +43,27 @@ h1 {
   .landing {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
+   
     /* height: 100vh; */ /* Optional: You can set the height of the landing section */
   }
 
   #floating-text {
     display: inline-block;
-    font-family: "Puente-Estrecho-St"; /* Specify your preferred sans-serif font stack */
-    font-size: 18px; /* You can adjust the font size as needed */
+    font-family: 'Slim-Joe',sans-serif; /* Specify your preferred sans-serif font stack */
+    font-size: 30px; /* You can adjust the font size as needed */
     margin-bottom: 100px;
     margin-top: 19px;
     transition: filter 2s ease-out, color 0.6s ease-out;
     text-align: center;
     margin-bottom: 100px;
-    font-size: 18px; /* Adjust the font size as needed */
-    line-height: 1.5; /* Add some line spacing for readability */
     max-width: 100%; /* Ensure the text doesn't exceed the viewport width */
   
-    width: 80%; 
+   
 
       
       
-      line-height: 1.5; /* Add some line spacing for readability */
+    line-height: 1.7; /* Add some line spacing for readability */
       max-width: 100%; /* Ensure the text doesn't exceed the viewport width */
       margin: 0 auto; /* Center-align the text horizontally */
 
@@ -97,44 +102,7 @@ header h3 {
   }
 }
 
-/* Gallery Styles */
 
-body.gallery {
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  margin: 0rem;
-  overflow: hidden;
-}
-
-#image-track {
-  display: flex;
-  gap: 4vmin;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(0%, -50%); 
-  user-select: none; /* -- Prevent image highlighting -- */
-}
-
-#image-track > .image {
-  width: 40vmin;
-  height: 56vmin;
-  object-fit: cover;
-  object-position: 100% center;
-}
-
-
-/* End of Gallery Styles */
-
-.gallery {
-  width: 50%;
-  margin: 0 auto;
-}
-.gallery img {
-  width: 100%;
-  height: auto;
-}
 
 .main-title:hover {
   filter: blur(30px);
@@ -146,8 +114,11 @@ body.gallery {
   transform: translateY(100%);
   animation: fade-in-top 1s ease forwards;
   font-size: 7em;
-  font-family:  "Bangers-Regular";
-  transition: filter 15s ease-out;
+
+    font-family:'Times New Roman', Times, serif, sans-serif;
+
+
+  transition: filter 10s ease-out;
   
     font-size: 4rem; /* Adjust the size as needed */
     padding: 10px; /* Add padding to create space around the title */
@@ -196,31 +167,43 @@ body.gallery {
 
 .section1 {
   padding-top: 100px; /* add 200px of padding to the top */
+ 
+
 }
 
 .section {
   position: relative;
   padding: 100px;
   text-align: center;
+  
+  
+};
+
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly between images */
+  align-items: center; /* Vertically center-align the images */
 }
 
 .section .banner {
   position: relative;
-  overflow: hidden;
+  overflow:visible;
   width: 100%; /* Add a fixed width */
-  height: 360px; /* Keep the fixed height */
+  height: 200px; /* Keep the fixed height */
 }
 
 .section .banner img {
   position: absolute;
-  left: 100;
+  left: 0; /* Change this to 0 to align the image to the left within the section */
   top: 0;
+  right: 0; /* Change this to 0 to align the image to the right within the section */
+  bottom: 0; /* Change this to 0 to align the image to the bottom within the section */
+  margin: auto; /* This centers the image both horizontally and vertically */
   width: 100%;
   height: auto;
-  transform: translateY(10%);
+  transform: translateY(5%);
   transition: transform 4s ease-out, filter 1s ease-out;
 }
-
 .section:hover .banner img,
 .section:focus .banner img {
   transform: translateY(1%);
@@ -248,15 +231,20 @@ body.gallery {
   transform: translate(-50%, -50%);
   color: #e0e0e0;
   font-size: 1.4rem;
-  font-family: "Bangers-Regular", sans-serif;
+  font-family: "Lot", sans-serif;
   opacity: 0;
   filter: blur(5px);
   transition: all 0.8s ease-out;
+  z-index: 1;
+  margin-top: -50px; /* Adjust the negative margin to move the title above the banner */
+  margin-left: -50px; /* Adjust the negative margin to center the title horizontally */
+}
 
-
-  /* Add the blur class initially */
-  /* Remove the opacity property */
-  /* Add the active class on hover */
+.section .banner .title {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 .section .banner:hover .title {
   opacity: 1;
@@ -279,6 +267,15 @@ body.gallery {
   transition: all 0.4s ease-out;
 }
 
+.section .banner .title {
+  transition: padding 0.2s;
+}
+
+.section .banner .title:hover {
+  padding: 30px; /* Increase the padding to make it appear larger */
+  background: rgba(0, 0, 0, 0.7); /* Darken the background on hover */
+  font-size: 1.6rem; /* Increase font size on hover */
+}
 /* Add the active class for the desired animation effect */
 .section .banner:hover .title.active {
   filter: blur(9px);
@@ -290,7 +287,7 @@ body.gallery {
 
 
 .banner-image {
-  animation: moveUpDown 14s ease-in-out infinite;
+  animation: moveUpDown 11s ease-in-out infinite;
   
   max-width: 170%;
   max-height:80%;
@@ -460,6 +457,7 @@ body.gallery {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center; 
 }
 
 .banner img {
@@ -539,7 +537,7 @@ footer {
   left: 0%;
   transform: translateY(-50%);
   margin-left: 10%;
-  margin-top: 1%;
+  margin-top: 1.9%;
   font-size: 4rem;
   font-family: "Thasadith", sans-serif;
   color: rgba(216, 216, 216, 0.877);
@@ -687,6 +685,13 @@ footer {
 
 #image-container {
   height: 500px; /* set the height to a fixed value */
+  
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Center-align the images horizontally */
+  align-items: center; /* Center-align the images vertically */
 }
 
 .gallery {
